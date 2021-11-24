@@ -113,7 +113,7 @@ if (isset($_SESSION['usuario'])) {
 								echo "Se registro correctamente '$nombre'";
 								header("Refresh: 1; url = logueo.php");
 							} else {
-								echo "NOOOO se registro correctamente";
+								echo "No se registro correctamente";
 							}
 						}
 					}
