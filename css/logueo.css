@@ -1,0 +1,101 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Lato;
+	max-width: 1400px;
+	padding: 14px 20px;
+	margin: auto;
+	background-image: url(../img/bg_garden.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: right;
+	background-attachment: fixed;
+    
+}
+
+.hero {
+    height: 80vh;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.Perro_logIn{
+    width: 38vh;
+}
+
+.formulario {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	
+}
+.slogan {
+	margin-bottom: 25px;
+}
+
+.btn_ingresar{
+    border-radius: 8px;
+    margin: 25px auto;
+    border-style: none;
+    background-color: #FF8A00;
+    color: #fff;
+    padding: 8px;
+    text-decoration: none;
+    width: 30%;
+    transition: 0.3s;
+}
+
+.btn_crear{
+    margin: auto;
+    width: 60%;
+    border-radius: 8px;
+    border-style: solid;
+    border-color: #45dc37;
+    background-color: #44DC37;
+    color: #fff;
+    padding: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn_crear a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.campo_informacion input{
+    border-color: #FF8A00;
+    background-color: rgba(255, 255, 255, 0);
+    margin-left: 30px;
+    width: 80%;
+    border-width: 2px;
+    border-radius: 2px;
+    border-style: solid;
+    height: 36px;
+    padding: 0 5px;
+}
+
+.campo_informacion h3{
+    font-size: 1.4em;
+    color:  #FF8A00;
+    padding: 2px;
+}
+
+.campo_informacion{
+    margin: 10px 0;
+}
+
+.btn_crear:hover, .btn_ingresar:hover{
+    box-shadow: 0px 0px 13px 1px rgba(73, 73, 73, 0.37);
+}
