@@ -4,7 +4,7 @@ include 'lib/conexion.php';
 
 ini_set('error_reporting', 0);
 if (isset($_SESSION['usuario'])) {
-	header("Location: index.php");
+	header("Location: home_usuario.php");
 }
 ?>
 

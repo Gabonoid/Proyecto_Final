@@ -1,3 +1,12 @@
+<?php
+session_start();
+include 'lib/conexion.php';
+
+ini_set('error_reporting', 0);
+if (isset($_SESSION['usuario'])) {
+	header("Location: home_usuario.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 
