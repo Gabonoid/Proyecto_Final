@@ -2,6 +2,7 @@
 session_start();
 include 'lib/conexion.php';
 
+ini_set('error_reporting', 0);
 if (isset($_SESSION['usuario'])) {
 	header("Location: index.php");
 }
@@ -50,22 +51,23 @@ if (isset($_SESSION['usuario'])) {
 					$contraseña = strip_tags($_POST['contraseña']);
 					$contraseña = trim($_POST['contraseña']);
 
+					$consulta =  "SELECT * FROM duenio WHERE correo = '$correo' AND contrasenia = '$contraseña';";
 
-					echo $correo;
-					echo $contraseña;
-					$query = mysqli_query($conexion, "SELECT * FROM duenio WHERE Correo = '$correo' AND Contraseña = '$contraseña';");
-					echo $query;
-					$contar = mysqli_num_rows($query);
+					$query = mysqli_query($conexion, $consulta);
+
+					$contar = mysqli_num_rows(mysqli_query($conexion, $consulta));
 
 					if ($contar == 1) {
 
 						while ($row = mysqli_fetch_array($query)) {
 
-							if ($correo = $row['correo'] && $contraseña = $row['contraseña']) {
+							if ($correo = $row['Correo'] && $contraseña = $row['Contrasenia']) {
 
-								$_SESSION['correo'] = $correo;
+								$_SESSION['usuario'] = $correo;
+								$_SESSION['Id'] = $row['Id_Dueño'];
 
-								header('Location: home_usuario.php');
+
+								header('Refresh: 1; url = home_usuario.php');
 							}
 						}
 					} else {
