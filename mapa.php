@@ -1,3 +1,12 @@
+<?php
+session_start();
+include 'lib/conexion.php';
+
+ini_set('error_reporting', 0);
+if (!isset($_SESSION['usuario'])) {
+	header("Location: index.php");
+}
+?>
 <!--
   Copyright 2021 Google LLC
 
@@ -407,7 +416,7 @@
               </svg>
             </button>
           {{/if}}
-          <a class="btn_agendar_cita" href="#">Agendar Cita</a>
+          <a class="btn_agendar_cita" href="registro_cita.php/?id={{index}}">Agendar Cita</a>
         </li>
       {{/each}}
     </script>

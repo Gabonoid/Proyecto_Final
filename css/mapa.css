@@ -40,6 +40,10 @@ html,
         text-decoration: none;
       }
 
+      .btn_agendar_cita:hover{
+        text-decoration: underline;
+      }
+
       #map-container {
         width: 100%;
         height: 92.7%;
