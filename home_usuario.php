@@ -3,7 +3,7 @@ session_start();
 include 'lib/conexion.php';
 
 ini_set('error_reporting', 0);
-if (isset($_SESSION['usuario'])) {
+if (!isset($_SESSION['usuario'])) {
     header("Location: index.php");
 }
 ?>
@@ -12,17 +12,44 @@ if (isset($_SESSION['usuario'])) {
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EXITO</title>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="css/style_home.css" />
+	<link href="img/icon_dog.png" rel="shortcut icon" type="image/png" />
+	<title>Mi peek | Home</title>
 </head>
 
 <body>
+	<header>
+		<img src="img/Logo_MiPeek.png" alt="Logo Mi Peek" class="logo" />
+		<nav class="nav_menu">
+            <a class="btn_cerrar" href="logout.php">Cerrar Sesion</a>
+			<a href="perfil_usuario.php" class="btn_principal_img"><img src="img/Perfil.png" alt="Logo_Perfil"></a>
 
-    <h1>Bienvenido, <?php $_SESSION['usuario']; ?> </h1>
+		</nav>
+	</header>
 
-    <a href="logout.php">Cerrar Sesion</a>
+	<main>
+		<div class="hero">
+			<img src="img/Perro.png" alt="perro_principal" />
+
+			<div class="hero_text">
+            <h1>Bienvenido, <?php echo $_SESSION['usuario']; ?></h1>
+				<h2>Los mejores veterinarios de tu zona a un click</h2>
+
+				<a href="#" class="btn_terciario">Conoce más</a>
+				<div class="btn_descargar_app">
+					<a target="_blank" href="https://play.google.com/store?hl=es_MX&utm_source=latam_Med&utm_medium=hasem&utm_content=Jan2017&utm_campaign=Evergreen&pcampaignid=MKT-FDR-latam-mx-1002290-Med-hasem-py-Evergreen-Jul1520-Text_Search_BKWS-28432345789&gclsrc=ds&gclsrc=ds">¡Descarga nuestra App!
+						<div class="logos_moviles">
+							<img src="img/Android_logo.png" alt="Logo Android" />
+							<img src="img/ios_logo.png" alt="Logo ios" />
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</main>
 </body>
 
 </html>

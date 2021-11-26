@@ -6,6 +6,12 @@ ini_set('error_reporting', 0);
 if (isset($_SESSION['usuario'])) {
 	header("Location: home_usuario.php");
 }
+
+
+$_SESSION['usuario'];
+$_SESSION['id'];
+$_SESSION['correo'];
+
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +36,7 @@ if (isset($_SESSION['usuario'])) {
 				<form method="POST">
 
 					<div class="campo_informacion">
-						<h3>USUARIO</h3>
+						<h3>CORREO</h3>
 						<input type="email" name="correo" pattern="[A-Za-z_-0-9]{1,20}" required />
 					</div>
 					<div class="campo_informacion">
@@ -40,6 +46,7 @@ if (isset($_SESSION['usuario'])) {
 					</div>
 					<button type="submit" name="login" class="btn_ingresar">Ingresar</button>
 				</form>
+
 				<?php
 				if (isset($_POST['login'])) {
 
@@ -47,11 +54,13 @@ if (isset($_SESSION['usuario'])) {
 					$correo = strip_tags($_POST['correo']);
 					$correo = trim($_POST['correo']);
 
-					$contraseña = mysqli_real_escape_string($conexion, $_POST['contraseña']);
-					$contraseña = strip_tags($_POST['contraseña']);
-					$contraseña = trim($_POST['contraseña']);
+					$contrasenia = mysqli_real_escape_string($conexion, $_POST['contraseña']);
+					$contrasenia = strip_tags($_POST['contraseña']);
+					$contrasenia = trim($_POST['contraseña']);
 
-					$consulta =  "SELECT * FROM duenio WHERE correo = '$correo' AND contrasenia = '$contraseña';";
+					$consulta =  "SELECT * FROM duenio WHERE correo = '$correo' AND contrasenia = '$contrasenia';";
+
+
 
 					$query = mysqli_query($conexion, $consulta);
 
@@ -61,13 +70,18 @@ if (isset($_SESSION['usuario'])) {
 
 						while ($row = mysqli_fetch_array($query)) {
 
-							if ($correo = $row['Correo'] && $contraseña = $row['Contrasenia']) {
 
 
-								$_SESSION['usuario'] = $row['nombre'];
+							if ($correo = $row['Correo'] && $contrasenia = $row['Contrasenia']) {
+
+
+								$_SESSION['correo'] = $row['Correo'];
+								$_SESSION['usuario'] = $row['Nombre'];
 								$_SESSION['id'] = $row['Id_Duenio'];
 
-								header('Refresh: 1; url = home_usuario.php');
+
+
+								header('Location: home_usuario.php');
 							}
 						}
 					} else {

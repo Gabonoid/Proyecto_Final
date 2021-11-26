@@ -68,7 +68,7 @@ if (isset($_SESSION['usuario'])) {
 						<div class="especial">
 							<select name="estado">
 								<option value="CDMX">CDMX</option>
-								<option value="estadoMexico">Estado de México</option>
+								<option value="Estado de Mexico">Estado de México</option>
 								<option value="Hidalgo">Hidalgo</option>
 							</select>
 						</div>

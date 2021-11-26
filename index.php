@@ -36,7 +36,6 @@ if (isset($_SESSION['usuario'])) {
 				<h2>Los mejores veterinarios de tu zona a un click</h2>
 
 				<a href="#" class="btn_terciario">Conoce más</a>
-
 				<div class="btn_descargar_app">
 					<a target="_blank" href="https://play.google.com/store?hl=es_MX&utm_source=latam_Med&utm_medium=hasem&utm_content=Jan2017&utm_campaign=Evergreen&pcampaignid=MKT-FDR-latam-mx-1002290-Med-hasem-py-Evergreen-Jul1520-Text_Search_BKWS-28432345789&gclsrc=ds&gclsrc=ds">¡Descarga nuestra App!
 						<div class="logos_moviles">
