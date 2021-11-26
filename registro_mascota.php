@@ -24,7 +24,7 @@ if (!isset($_SESSION['usuario'])) {
     <header>
         <a href="index.php"><img src="img/Logo_MiPeek.png" alt="Logo Mi Peek" class="logo" /></a>
         <nav class="nav_menu">
-            <a href="perfil_mascota.html" class="nav_menu-btn">Mis mascotas</a>
+            <a href="mis_mascotas.php" class="nav_menu-btn">Mis mascotas</a>
             <a href="#" class="nav_menu-btn">Mis Citas</a>
             <a href="#" class="nav_menu-btn">Historial</a>
             <a href="mapa.php" class="nav_menu-btn">Agendar</a>
