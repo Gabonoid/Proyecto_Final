@@ -3,6 +3,9 @@ session_start();
 include 'lib/conexion.php';
 
 ini_set('error_reporting', 0);
+if (isset($_SESSION['usuario'])) {
+    header("Location: index.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -16,10 +19,9 @@ ini_set('error_reporting', 0);
 </head>
 
 <body>
-    <?php
 
-    echo "<h1>Bienvenido, " . $nombre . "</h1>";
-    ?>
+    <h1>Bienvenido, <?php $_SESSION['usuario']; ?> </h1>
+
     <a href="logout.php">Cerrar Sesion</a>
 </body>
 

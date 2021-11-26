@@ -63,9 +63,9 @@ if (isset($_SESSION['usuario'])) {
 
 							if ($correo = $row['Correo'] && $contraseña = $row['Contrasenia']) {
 
-								$_SESSION['usuario'] = $correo;
-								$_SESSION['Id'] = $row['Id_Dueño'];
 
+								$_SESSION['usuario'] = $row['nombre'];
+								$_SESSION['id'] = $row['Id_Duenio'];
 
 								header('Refresh: 1; url = home_usuario.php');
 							}
