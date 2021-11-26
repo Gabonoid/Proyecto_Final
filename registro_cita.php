@@ -42,7 +42,7 @@ $consultaVeterinario =  "SELECT * FROM duenio WHERE Id_Duenio = '$IdSesion';";
 
 <body>
 	<header>
-		<a href="index.html"><img src="img/Logo_MiPeek.png" alt="Logo Mi Peek" class="logo" /></a>
+		<a href="index.php"><img src="img/Logo_MiPeek.png" alt="Logo Mi Peek" class="logo" /></a>
 		<nav class="nav_menu">
 			<a href="#" class="nav_menu-btn">Citas</a>
 			<a href="#" class="nav_menu-btn">Historial</a>
