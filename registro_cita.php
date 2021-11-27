@@ -6,6 +6,7 @@ ini_set('error_reporting', 0);
 if (!isset($_SESSION['usuario'])) {
 	header("Location: index.php");
 }
+$css = file_get_contents('css/registro_cita.css');
 ?>
 
 <?php
@@ -35,27 +36,30 @@ $consultaVeterinario =  "SELECT * FROM duenio WHERE Id_Duenio = '$IdSesion';";
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="stylesheet" href="css/style_veterinario.css" />
-	<link href='img/icon_dog.png' rel='shortcut icon' type='image/png'>
+	<link href='../img/icon_dog.png' rel='shortcut icon' type='image/png'>
 	<title>Mi Peek | Agendar Cita</title>
 </head>
 
 <body>
+	<style>
+		<?php echo $css; ?>
+	</style>
 	<header>
-		<a href="index.php"><img src="img/Logo_MiPeek.png" alt="Logo Mi Peek" class="logo" /></a>
+		<a href="../index.php"><img src="../img/Logo_MiPeek.png" alt="Logo Mi Peek" class="logo" /></a>
 		<nav class="nav_menu">
-			<a href="#" class="nav_menu-btn">Citas</a>
-			<a href="#" class="nav_menu-btn">Historial</a>
-			<a href="#" class="nav_menu-btn"><img src="img/Perfil.png" alt="logo perfil" /></a>
+			<a href="../mis_mascotas.php" class="nav_menu-btn">Mis mascotas</a>
+			<a href="../mis_citas.php" class="nav_menu-btn">Historial</a>
+			<a href="../mapa.php" class="nav_menu-btn">Agendar</a>
+			<a href="../home_usuario.php" class="nav_menu-btn"><img src="../img/Perfil.png" alt="logo perfil" /></a>
 		</nav>
 	</header>
 	<main>
 		<h1>Agendar Cita</h1>
 		<form method="post">
-			<div class="informacion_veterinario">
-				<div class="campo_informacion_largo">
+			<div class="informaciones">
+				<div class="campo_informacion">
 					<h3>Mascota</h3>
-					<select name="mascota">
+					<select name="mascota" required>
 						<?php
 						$idDuenio = $_SESSION['id'];
 						$cadena = "SELECT mascota.* FROM mascota, duenio_mascota WHERE (duenio_mascota" . "." . "Id_Mascota = mascota" . "." . "Id_Mascota AND duenio_mascota" . "." . "Id_Duenio = $idDuenio); ";
@@ -67,11 +71,11 @@ $consultaVeterinario =  "SELECT * FROM duenio WHERE Id_Duenio = '$IdSesion';";
 				</div>
 				<div class="campo_informacion">
 					<h3>Fecha</h3>
-					<input type="date" name="fecha" />
+					<input type="date" name="fecha" required />
 				</div>
-				<div class="campo_informacion_largo">
+				<div class="campo_informacion">
 					<h3>Horario</h3>
-					<select name="horario">
+					<select name="horario" required>
 						<option value="mascota">--Escoje tu horario--</option>
 						<option value="12:00:00">12:00</option>
 						<option value="13:00:00">13:00</option>

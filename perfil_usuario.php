@@ -35,7 +35,6 @@ $direccionCompleta = $row['Calle'].", ".$row['Estado'].", ".$row['CP'];
 		<a href="index.php"><img src="img/Logo_MiPeek.png" alt="Logo Mi Peek" class="logo" /></a>
 		<nav class="nav_menu">
 			<a href="mis_mascotas.php" class="nav_menu-btn">Mis mascotas</a>
-			<a href="registro_mascota.php" class="nav_menu-btn">Mis Citas</a>
 			<a href="mis_citas.php" class="nav_menu-btn">Historial</a>
 			<a href="mapa.php" class="nav_menu-btn">Agendar</a>
 			<a href="#" class="nav_menu-btn"><img src="img/Perfil.png" alt="logo perfil" /></a>

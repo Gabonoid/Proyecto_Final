@@ -16,6 +16,7 @@ if (!isset($_SESSION['usuario'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='img/icon_dog.png' rel='shortcut icon' type='image/png'>
+    <link rel="stylesheet" href="css/registro_mascota.css">
     <title>Mi Peek | Nueva Mascota</title>
 </head>
 
@@ -25,10 +26,10 @@ if (!isset($_SESSION['usuario'])) {
         <a href="index.php"><img src="img/Logo_MiPeek.png" alt="Logo Mi Peek" class="logo" /></a>
         <nav class="nav_menu">
             <a href="mis_mascotas.php" class="nav_menu-btn">Mis mascotas</a>
-            <a href="#" class="nav_menu-btn">Mis Citas</a>
-            <a href="#" class="nav_menu-btn">Historial</a>
-            <a href="mapa.php" class="nav_menu-btn">Agendar</a>
-            <a href="#" class="nav_menu-btn"><img src="img/Perfil.png" alt="logo perfil" /></a>
+            <a href="../mis_mascotas.php" class="nav_menu-btn">Mis mascotas</a>
+			<a href="../mis_citas.php" class="nav_menu-btn">Historial</a>
+			<a href="../mapa.php" class="nav_menu-btn">Agendar</a>
+            <a href="../home_usuario.php" class="nav_menu-btn"><img src="img/Perfil.png" alt="logo perfil" /></a>
         </nav>
     </header>
 
@@ -53,28 +54,28 @@ if (!isset($_SESSION['usuario'])) {
                         <h3>Color</h3>
                         <input type="text" size="30" name="color" value="<?php echo $_POST['color']; ?>" required />
                     </div>
-                    <div class="campo_informacion">
+                    <div class="campo_informacion_radio">
                         <h3>Sexo</h3>
                         <input type="radio" name="sexo" value="macho" required />
                         <label for="macho">Macho</label>
                         <input type="radio" name="sexo" value="hembra" required />
                         <label for="hembra">Hembra</label>
                     </div>
-                    <div class="campo_informacion">
+                    <div class="campo_informacion_radio">
                         <h3>Microchip</h3>
                         <input type="radio" name="microchip" value="true" required />
                         <label for="true">Si</label>
                         <input type="radio" name="microchip" value="false" required />
                         <label for="false">No</label>
                     </div>
-                    <div class="campo_informacion">
+                    <div class="campo_informacion_radio">
                         <h3>Pedigri</h3>
                         <input type="radio" name="pedigri" value="true" required />
                         <label for="true">Si</label>
                         <input type="radio" name="pedigri" value="false" required />
                         <label for="false">No</label>
                     </div>
-                    <div class="campo_informacion">
+                    <div class="campo_informacion_radio">
                         <h3>Tatuaje</h3>
                         <input type="radio" name="tatuaje" value="true" required />
                         <label for="true">Si</label>
@@ -85,8 +86,10 @@ if (!isset($_SESSION['usuario'])) {
                         <h3>Señas particulares</h3>
                         <textarea name="senias" id="" cols="30" rows="10" style="resize: none"></textarea>
                     </div>
-                    <button type="submit" class="btn_registrar" name="registrar">Registrar</button>
+                    <button type="submit" class="btn_modificar" name="registrar">Registrar</button>
                 </form>
+            </div>
+        </div>
     </main>
 
 </body>
